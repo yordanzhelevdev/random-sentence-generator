@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing</title>
+   
+</head>
+<body>
+<div id="sentences"></div>
+</body>
+
+
+
+</html> 
+
+<script>
+
+const load = () => {
+    const xhttp = new XMLHttpRequest();
+
+    xhttp.open("GET", "http://localhost:3000/sentences/", false);
+    xhttp.send();
+    
+    const books = JSON.parse(xhttp.responseText);
+    //let bookStrings = JSON.stringify(books);
+    
+
+    for (let key in books) {
+       const x = `<div>${books[key].podlog} ${books[key].glagol}  ${books[key].skazuemo} ${books[key].dopulnenie}  ${books[key].obstoqtelstveno}  ${books[key].drugi}</div>`;
+        document.getElementById("sentences").innerHTML = document.getElementById("sentences").innerHTML + x;
+    }
+    
+}
+load();
+</script>
