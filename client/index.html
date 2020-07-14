@@ -27,7 +27,7 @@ const load = () => {
 
     for (let key in books) {
        const x = `<div>${books[key].podlog} ${books[key].glagol}  ${books[key].skazuemo} ${books[key].dopulnenie}  ${books[key].obstoqtelstveno}  ${books[key].drugi}</div>`;
-        document.getElementById("sentences").innerHTML = document.getElementById("sentences").innerHTML + x;
+        document.getElementById("sentences").innerHTML += x;
     }
     
 }
